@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A chat app that is built on sockets\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dweb ",
   "main": "index.js",
-  "scripts": {
-    "start": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts":{
+  "start": "node server/index.js",
+    "test": "mocha server/**/*.test.js",
+    "test-watch":"nodemon  --exec 'npm test'"
   },
   "engines": {
     "node": "10.16.3"
@@ -19,5 +20,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "expect": "^25.2.3",
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.2"
   }
 }
