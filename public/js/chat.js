@@ -72,13 +72,7 @@ socket.on('newLocationMessage', function(message){
 
 	jQuery('#messages').append(html)
 	scrollToBottom()
-	// var li = jQuery('<li></li>')
-	// var a = jQuery('<a target="_blank">My current location </a>')
-
-	// li.text(`${message.from} ${formattedTime}: `)
-	// a.attr('href',message.url)
-	// li.append(a)
-	// jQuery('#messages').append(li)
+	
 })
 
 jQuery('#message-form').on('submit', function(e){
@@ -86,7 +80,7 @@ jQuery('#message-form').on('submit', function(e){
 
 	var messageTextbox = jQuery('[name=message]')
 	socket.emit('createMessage', {
-		from: 'User',
+		
 		text: messageTextbox.val()
 	},function(e){
 		messageTextbox.val('')
